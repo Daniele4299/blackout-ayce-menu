@@ -1,0 +1,102 @@
+:root {
+    --nero-profondo: #121212;
+    --grigio-antracite: #1E1E1E;
+    --oro-elegante: #C9A856;
+    --verde-tropicale: #2E8B57;
+    --bianco-crema: #F5F5DC;
+    --grigio-perla: #B0B0B0;
+}
+
+/* Header */
+.header {
+    height: 34vw;
+    margin: 30px auto;
+    background: url('/header_img.png') no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+    opacity: 0; /* Inizia invisibile */
+    animation: fadeInUpBackground 1s ease-out forwards; /* Animazione dolce di dissolvenza e movimento */
+}
+
+/* Contenuto dell'header */
+.header-contents {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 10%;
+    left: 6vw;
+}
+
+/* Titolo */
+.header-contents h2 {
+    font-weight: 500;
+    color: var(--bianco-crema);
+    font-size: max(4.5vw, 22px);
+}
+
+/* Testo */
+.header-contents p {
+    color: var(--grigio-perla);
+    font-size: 1vw;
+}
+
+/* Pulsante */
+.header-contents button {
+    border: none;
+    color: var(--nero-profondo);
+    font-weight: 500;
+    padding: 1vw 2.3vw;
+    background-color: var(--oro-elegante);
+    font-size: max(1.5vw, 13px);
+    border-radius: 50px;
+    transition: 0.3s;
+}
+
+/* Hover del pulsante */
+.header-contents button:hover {
+    background-color: var(--verde-tropicale);
+    color: var(--bianco-crema);
+}
+
+/* Media query */
+@media (max-width: 1050px) {
+    .header {
+        height: 38vw;
+    }
+    .header-contents {
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 750px) {
+    .header-contents {
+        max-width: 65%;
+    }
+    .header-contents p {
+        display: none;
+    }
+    .header-contents button {
+        padding: 2vw 4vw;
+    }
+}
+
+/* Animazione dissolvenza e movimento dall'alto del background */
+@keyframes fadeInUpBackground {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Inizia un po' sopra */
+    }
+    50% {
+        opacity: 0.5;
+        transform: translateY(5px); /* Si avvicina al suo posto */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Posizione finale */
+    }
+}
